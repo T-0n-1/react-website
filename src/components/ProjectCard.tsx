@@ -9,7 +9,7 @@ export function ProjectCard({ project }: { project: Project }) {
       </div>
 
       <div className="relative">
-        <h3 className="text-base font-semibold tracking-tight sm:text-lg">
+        <h3 className="text-base font-semibold tracking-tight text-neutral-100 sm:text-lg">
           {project.title}
         </h3>
         <p className="mt-2 text-sm text-neutral-300">{project.description}</p>

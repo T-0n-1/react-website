@@ -73,7 +73,9 @@ export default function HomePage() {
                 key={c.title}
                 className="rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:border-white/20 hover:bg-white/10"
               >
-                <h3 className="text-sm font-semibold">{c.title}</h3>
+                <h3 className="text-sm font-semibold text-neutral-100">
+                  {c.title}
+                </h3>
                 <p className="mt-2 text-sm text-neutral-300">{c.text}</p>
               </div>
             ))}
