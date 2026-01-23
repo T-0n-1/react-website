@@ -3,6 +3,7 @@ import { Container } from "@/components/Container";
 import { Section } from "@/components/Section";
 import { ProjectCard } from "@/components/ProjectCard";
 import { projects } from "@/content/projects";
+import Image from "next/image";
 
 export default function HomePage() {
   const featured = projects.filter((p) => p.featured).slice(0, 3);
@@ -11,37 +12,56 @@ export default function HomePage() {
     <div>
       <Container>
         <div className="py-12 sm:py-16">
-          <div className="max-w-3xl">
-            <p className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-neutral-200">
-              Test Automation Engineer{" "}
-              <span className="text-neutral-500">•</span> Python{" "}
-              <span className="text-neutral-500">•</span> Robot Framework
-            </p>
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+            {/* Left: hero text */}
+            <div className="max-w-3xl">
+              <p className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-neutral-200 shadow-sm backdrop-blur">
+                Test Automation Engineer{" "}
+                <span className="text-neutral-500">•</span> Python{" "}
+                <span className="text-neutral-500">•</span> Robot Framework
+              </p>
 
-            <h1 className="mt-5 text-3xl font-semibold tracking-tight text-neutral-100 sm:text-5xl">
-              Building reliable automation and fast feedback for software teams.
-            </h1>
+              <h1 className="mt-5 text-3xl font-semibold tracking-tight text-neutral-100 sm:text-5xl">
+                Building reliable automation and fast feedback for software
+                teams.
+              </h1>
 
-            <p className="mt-5 text-base text-neutral-300 sm:text-lg">
-              I’m a Test Automation Engineer focused on maintainable automated
-              tests and CI pipelines. Currently working as a Test Automation
-              Consultant via Academic Work, supporting DA-Group in Forssa,
-              Finland.
-            </p>
+              <p className="mt-5 text-base text-neutral-300 sm:text-lg">
+                I’m a Test Automation Engineer focused on maintainable automated
+                tests and CI pipelines. Currently working as a Test Automation
+                Consultant via Academic Work, supporting DA-Group in Forssa,
+                Finland.
+              </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="/projects"
-                className="inline-flex items-center justify-center rounded-xl bg-white px-4 py-2 text-sm font-semibold text-neutral-950 transition hover:opacity-90"
-              >
-                View Projects
-              </Link>
-              <Link
-                href="/about"
-                className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-neutral-100 transition hover:border-white/20 hover:bg-white/10"
-              >
-                About Me
-              </Link>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link
+                  href="/projects"
+                  className="inline-flex items-center justify-center rounded-xl bg-white px-4 py-2 text-sm font-semibold text-neutral-950 transition hover:opacity-90"
+                >
+                  View Projects
+                </Link>
+                <Link
+                  href="/about"
+                  className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-neutral-100 transition hover:border-white/20 hover:bg-white/10"
+                >
+                  About Me
+                </Link>
+              </div>
+            </div>
+
+            {/* Right: hero image (desktop only) */}
+            <div className="relative hidden lg:block">
+              <div className="relative aspect-square overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-sm">
+                <Image
+                  src="/images/hero/me_b&w.png"
+                  alt="Picture of Toni Mertanen"
+                  fill
+                  priority
+                  className="object-cover opacity-80"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-neutral-950 via-transparent to-transparent" />
+                <div className="absolute inset-0 ring-1 ring-white/10" />
+              </div>
             </div>
           </div>
         </div>
