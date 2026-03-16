@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Toni Mertanen",
-  description: "Test Automation Engineer | Python | Robot Framework",
+  description: "Test Automation Specialist | Python | Robot Framework",
 };
 
 export default function RootLayout({
